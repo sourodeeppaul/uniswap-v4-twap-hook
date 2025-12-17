@@ -25,18 +25,18 @@ Instead of executing a large swap at once (causing high slippage), users deposit
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                       User Interface                         │
+│                       User Interface                        │
 ├─────────────────────────────────────────────────────────────┤
 │  1. Commit order hash  →  CommitReveal                      │
 │  2. Reveal & deposit   →  TWAPHook  →  TWAPOrderVault       │
 ├─────────────────────────────────────────────────────────────┤
-│                    Execution Layer                           │
+│                    Execution Layer                          │
 │  Keeper Bot  →  TWAPExecutor  →  PoolManager                │
 ├─────────────────────────────────────────────────────────────┤
-│                    Security Layer                            │
+│                    Security Layer                           │
 │  CircuitBreaker │ PriceGuard │ RateLimiter │ TWAPOracle     │
 ├─────────────────────────────────────────────────────────────┤
-│                    Governance                                │
+│                    Governance                               │
 │  TWAPGovernor  →  Timelock  →  Parameter Updates            │
 └─────────────────────────────────────────────────────────────┘
 ```
