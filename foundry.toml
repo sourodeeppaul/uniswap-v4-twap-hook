@@ -1,0 +1,61 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 1000000
+via_ir = true
+ffi = true
+fs_permissions = [{ access = "read-write", path = "./" }]
+
+[profile.default.fuzz]
+runs = 1000
+max_test_rejects = 65536
+seed = "0x1234"
+dictionary_weight = 40
+include_storage = true
+include_push_bytes = true
+
+[profile.default.invariant]
+runs = 256
+depth = 128
+fail_on_revert = false
+call_override = false
+shrink_sequence = true
+
+[profile.ci]
+fuzz = { runs = 10000 }
+invariant = { runs = 512, depth = 256 }
+
+[profile.lite]
+optimizer = false
+via_ir = false
+
+[fmt]
+bracket_spacing = true
+int_types = "long"
+line_length = 120
+multiline_func_header = "attributes_first"
+number_underscore = "thousands"
+quote_style = "double"
+single_line_statement_blocks = "single"
+tab_width = 4
+wrap_comments = true
+
+[doc]
+out = "docs/technical"
+title = "Uniswap v4 TWAP Hook"
+
+[rpc_endpoints]
+mainnet = "${ETH_RPC_URL}"
+sepolia = "${SEPOLIA_RPC_URL}"
+arbitrum = "${ARBITRUM_RPC_URL}"
+optimism = "${OPTIMISM_RPC_URL}"
+
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
+arbitrum = { key = "${ARBISCAN_API_KEY}" }
+optimism = { key = "${OPTIMISM_ETHERSCAN_API_KEY}" }

@@ -1,0 +1,48 @@
+# Compiler files
+cache/
+out/
+artifacts/
+
+# Ignores development broadcast logs
+broadcast/
+!/broadcast/*/31337/
+
+# Docs
+docs/technical/
+
+# Dotenv file
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+
+# Coverage
+lcov.info
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keeper builds
+keeper/dist/
+keeper/node_modules/
+
+# Test artifacts
+*.log
+*.tmp
+
+# Gas snapshots
+.gas-snapshot
+
+# Slither
+slither-report/
