@@ -170,10 +170,6 @@ This project has not been audited. Use at your own risk.
 - **Price Guards**: TWAP validation for manipulation protection
 - **Timelock**: Governance actions require delay
 
-### Bug Bounty
-
-Coming soon.
-
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md)
